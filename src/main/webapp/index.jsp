@@ -3,15 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="ISO-8859-1">
-	<title>Curso JSP</title>
+<meta charset="ISO-8859-1">
+<title>Curso JSP</title>
 </head>
 <body>
 
 	<h1>Bem vindo ao curso do JSP</h1>
-	
-	<%
-	out.print("Seu sucesso garantido");
-	%>
+
+	<form action="receber-nome.jsp">
+		<label>Nome:</label>
+		<input name="nome"> 
+		<label>Idade:</label>
+		<input name="idade"> 
+		<input type="submit" value="enviar">
+	</form>
 </body>
 </html>
