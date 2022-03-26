@@ -24,18 +24,26 @@ public class ServletLogin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
 		String login = request.getParameter("Login");
 		String senha = request.getParameter("Senha");
 
-		if (login != null && login.isEmpty() && senha != null && senha.isEmpty()) {
-		
-			ModelLogin modellogin = new ModelLogin();
-			modellogin.setLogin(login);
-			modellogin.setSenha(senha);
-		}else {
+		ModelLogin modellogin = new ModelLogin();
+		modellogin.setLogin(login);
+		modellogin.setSenha(senha);
+
+		if (modellogin.getLogin().equalsIgnoreCase("admin") && modellogin.getSenha().equalsIgnoreCase("admin")) {
+
+			request.getSession().setAttribute("usuario", modellogin.getLogin());
+			RequestDispatcher redirecionar = request.getRequestDispatcher("principal/principal.jsp");
+			redirecionar.forward(request, response);
+
+		} else {
+
 			RequestDispatcher redirecionar = request.getRequestDispatcher("index.jsp");
 			request.setAttribute("msg", "informe o login e senha corretamente");
 			redirecionar.forward(request, response);
+
 		}
 
 	}
