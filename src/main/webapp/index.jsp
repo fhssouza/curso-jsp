@@ -11,11 +11,24 @@
 	<h1>Bem vindo ao curso do JSP</h1>
 
 	<form action="ServletLogin" method="post">
-		<label>Nome:</label>
-		<input name="nome"> 
-		<label>Idade:</label>
-		<input name="idade"> 
-		<input type="submit" value="enviar">
+		<table>
+			<tr>
+				<td><label>Login:</label></td>
+			</tr>
+			<tr>
+				<td><input name="Login" type="text"></td>
+			</tr>
+			<tr>
+				<td><label>Senha:</label></td>
+			</tr>
+			<tr>
+				<td><input name="Senha" type="password"></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="enviar"></td>
+			</tr>
+		</table>
 	</form>
+	<h4>${msg}</h4>
 </body>
 </html>
