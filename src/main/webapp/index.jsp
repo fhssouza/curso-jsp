@@ -40,19 +40,31 @@ h5 {
 
 	<div class="container-md">
 
-		<form action="ServletLogin" method="post" class="row g-3">
+		<form action="ServletLogin" method="post" class="row g-3 needs-validation" novalidate>
 
 			<input type="hidden" value="<%=request.getParameter("url")%>"
 				name="url">
 
 			<div class="col-md-6">
-				<label class="form-label">Login:</label> <input name="Login"
-					type="text" class="form-control">
+				<label class="form-label">Login:</label> 
+				<input name="Login" type="text" class="form-control" required>
+				<div class="valid-feedback">
+      			Login ok!
+    			</div>
+    			<div class="invalid-feedback">
+        		Por favor, informe o Login.
+     			</div>
 			</div>
 
 			<div class="col-md-6">
-				<label class="form-label">Senha:</label> <input name="Senha"
-					type="password" class="form-control">
+				<label class="form-label">Senha:</label> 
+				<input name="Senha"	type="password" class="form-control" required>
+				<div class="valid-feedback">
+      			Senha ok!
+    			</div>
+    			<div class="invalid-feedback">
+        		Por favor, informe a senha.
+     			</div>
 			</div>
 
 			<div class="col-12">
@@ -72,5 +84,28 @@ h5 {
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+	
+	<script type="text/javascript">
+	// Example starter JavaScript for disabling form submissions if there are invalid fields
+	(function () {
+	  'use strict'
+
+	  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+	  var forms = document.querySelectorAll('.needs-validation')
+
+	  // Loop over them and prevent submission
+	  Array.prototype.slice.call(forms)
+	    .forEach(function (form) {
+	      form.addEventListener('submit', function (event) {
+	        if (!form.checkValidity()) {
+	          event.preventDefault()
+	          event.stopPropagation()
+	        }
+
+	        form.classList.add('was-validated')
+	      }, false)
+	    })
+	})()
+	</script>
 </body>
 </html>
