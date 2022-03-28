@@ -45,7 +45,7 @@ h5 {
 			<input type="hidden" value="<%=request.getParameter("url")%>"
 				name="url">
 
-			<div class="col-md-6">
+			<div class="mb-3">
 				<label class="form-label">Login:</label> 
 				<input name="Login" type="text" class="form-control" required>
 				<div class="valid-feedback">
@@ -56,7 +56,7 @@ h5 {
      			</div>
 			</div>
 
-			<div class="col-md-6">
+			<div class="mb-3">
 				<label class="form-label">Senha:</label> 
 				<input name="Senha"	type="password" class="form-control" required>
 				<div class="valid-feedback">
