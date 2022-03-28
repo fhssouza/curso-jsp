@@ -34,11 +34,11 @@ public class ServletLogin extends HttpServlet {
 		String senha = request.getParameter("Senha");
 		String url = request.getParameter("url");
 
-		ModelLogin modellogin = new ModelLogin();
-		modellogin.setLogin(login);
-		modellogin.setSenha(senha);
-
 		try {
+			
+			ModelLogin modellogin = new ModelLogin();
+			modellogin.setLogin(login);
+			modellogin.setSenha(senha);
 
 			if (daoLoginRepository.validarAutenticacao(modellogin)) {
 
@@ -61,6 +61,9 @@ public class ServletLogin extends HttpServlet {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+			RequestDispatcher redirecionar = request.getRequestDispatcher("erro.jsp");
+			request.setAttribute("msg", e.getMessage());
+			redirecionar.forward(request, response);
 		}
 	}
 
