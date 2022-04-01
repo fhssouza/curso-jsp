@@ -15,20 +15,20 @@
 	<div id="pcoded" class="pcoded">
 		<div class="pcoded-overlay-box"></div>
 		<div class="pcoded-container navbar-wrapper">
-		
-		<jsp:include page="navbar.jsp"></jsp:include>
+
+			<jsp:include page="navbar.jsp"></jsp:include>
 
 			<div class="pcoded-main-container">
 				<div class="pcoded-wrapper">
-				
-				<jsp:include page="navbarmainmenu.jsp"></jsp:include>
-				
+
+					<jsp:include page="navbarmainmenu.jsp"></jsp:include>
+
 					<div class="pcoded-content">
-						
+
 						<!-- Page-header start -->
 						<jsp:include page="page-header.jsp"></jsp:include>
 						<!-- Page-header end -->
-						
+
 						<div class="pcoded-inner-content">
 							<!-- Main-body start -->
 							<div class="main-body">
@@ -36,22 +36,67 @@
 									<!-- Page-body start -->
 									<div class="page-body">
 										<div class="row">
-											<h1>Cadastro de Usuario</h1>
+											<div class="col-sm-12">
+												<!-- Basic Form Inputs card start -->
+												<div class="card">
+													<div class="card-block">
+														<h4 class="sub-title">Cadastro de Usuários</h4>
+														<form class="form-material">
+															<div class="form-group form-default">
+																<input type="text" name="footer-email"
+																	class="form-control" required=""> <span
+																	class="form-bar"></span> <label class="float-label">Código:</label>
+															</div>
+															<div class="form-group form-default">
+																<input type="text" name="footer-email"
+																	class="form-control" required="" value=""> <span
+																	class="form-bar"></span> <label class="float-label">Nome:</label>
+															</div>
+															<div class="form-group form-default">
+																<input type="text" name="footer-email"
+																	class="form-control" required=""> <span
+																	class="form-bar"></span> <label class="float-label">Email:
+																	(exa@gmail.com)</label>
+															</div>
+															<div class="form-group form-default">
+																<input type="password" name="footer-email"
+																	class="form-control" required=""> <span
+																	class="form-bar"></span> <label class="float-label">Password:</label>
+															</div>
+															<button class="btn btn-primary waves-effect waves-light">Primary
+																Button</button>
+															<button class="btn btn-success waves-effect waves-light">Success
+																Button</button>
+															<button class="btn btn-info waves-effect waves-light">Info
+																Button</button>
+															<button class="btn btn-warning waves-effect waves-light">Warning
+																Button</button>
+															<button class="btn btn-danger waves-effect waves-light">Danger
+																Button</button>
+															<button class="btn btn-inverse waves-effect waves-light">Inverse
+																Button</button>
+															<button
+																class="btn btn-disabled disabled waves-effect waves-light">Disabled
+																Button</button>
+
+														</form>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<!-- Page-body end -->
+									<div id="styleSelector"></div>
 								</div>
-								<div id="styleSelector"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Required Jquery -->
-	<jsp:include page="javascriptfile.jsp"></jsp:include>
+		<!-- Required Jquery -->
+		<jsp:include page="javascriptfile.jsp"></jsp:include>
 </body>
 
 </html>
