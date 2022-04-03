@@ -28,6 +28,8 @@ public class ServletUsuarioController extends HttpServlet {
 			throws ServletException, IOException {
 
 		try {
+			
+			String msg = "Operação Realizada com Sucesso!!";
 
 			String id = request.getParameter("id");
 			String nome = request.getParameter("nome");
@@ -43,9 +45,13 @@ public class ServletUsuarioController extends HttpServlet {
 			modelLogin.setLogin(login);
 			modelLogin.setSenha(senha);
 
-			modelLogin = daoUsuarioRepository.salvarUsuario(modelLogin);
+			if (daoUsuarioRepository.validarLogin(modelLogin.getLogin()) && modelLogin.getId() == null) {
+				msg = "Usuario existente, informe outro login";
+			} else {
+				modelLogin = daoUsuarioRepository.salvarUsuario(modelLogin);
+			}
 
-			request.setAttribute("msg", "Operação Realizada com Sucesso!!");
+			request.setAttribute("msg", msg);
 			request.setAttribute("modelLogin", modelLogin);
 			request.getRequestDispatcher("principal/usuario.jsp").forward(request, response);
 
